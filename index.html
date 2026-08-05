@@ -95,6 +95,11 @@ img{display:block}
   color:var(--ink-2);
   line-height:1.9;
 }
+.preamble p+p{
+  margin-top:1.25rem;
+  font-size:var(--fs-small);
+  letter-spacing:0.07em;
+}
 
 /* ── PORTFOLIO ────────────────────────────────── */
 .portfolio{
@@ -209,9 +214,49 @@ img{display:block}
 }
 
 /* ── FOOTER ───────────────────────────────────── */
+/* ── CONTACT ──────────────────────────────────── */
+.contact{
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  padding:4rem var(--gutter);
+}
+.contact-inner{
+  max-width:var(--container);
+  margin:0 auto;
+  display:flex;
+  align-items:baseline;
+  gap:3rem;
+  flex-wrap:wrap;
+}
+.contact-eyebrow{
+  font-size:var(--fs-small);
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  text-indent:0.28em;
+  color:var(--gold);
+  flex-shrink:0;
+  min-width:5rem;
+}
+.contact-details{
+  display:flex;
+  gap:2.5rem;
+  flex-wrap:wrap;
+  align-items:baseline;
+}
+.contact-item{
+  font-style:italic;
+  font-size:1.0625rem;
+  color:var(--ink);
+  text-decoration:none;
+  transition:color 0.15s;
+}
+.contact-item:hover{color:var(--gold)}
+.contact-item:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ── FOOTER ───────────────────────────────────── */
 .site-footer{
   border-top:1px solid var(--rule);
-  padding:3.5rem var(--gutter);
+  padding:3.5rem var(--gutter) 2.5rem;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -224,6 +269,27 @@ img{display:block}
   text-transform:uppercase;
   text-indent:0.22em;
   color:var(--ink-2);
+}
+.footer-eho{
+  margin-top:1.5rem;
+  padding-top:1.5rem;
+  border-top:1px solid var(--rule);
+  width:100%;
+  max-width:var(--container);
+  display:flex;
+  gap:1.25rem;
+  align-items:flex-start;
+}
+.eho-logo{
+  flex-shrink:0;
+  color:var(--ink-2);
+  opacity:0.75;
+}
+.eho-text{
+  font-size:0.75rem;
+  color:var(--ink-2);
+  line-height:1.65;
+  max-width:72ch;
 }
 
 /* ── MOTION ───────────────────────────────────── */
@@ -240,7 +306,8 @@ img{display:block}
 </header>
 
 <section class="preamble">
-  <p>Westbury Advisors manages a private portfolio of residential properties in Manhattan. The holdings shown here are selected.</p>
+  <p>Westbury Advisors curates an exclusive portfolio of luxury residences, expertly acquiring, transforming, furnishing, and managing each property with meticulous attention to detail.</p>
+  <p>The holdings shown here are selected.</p>
 </section>
 
 <main class="portfolio">
@@ -362,7 +429,34 @@ img{display:block}
   </article>
 </main>
 
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="contact-eyebrow">Contact</p>
+    <div class="contact-details">
+      <a class="contact-item" href="mailto:rebecca@shalam.com">rebecca@shalam.com</a>
+      <a class="contact-item" href="tel:+19175792000">917-579-2000</a>
+    </div>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="footer-seal"><svg viewBox="0 0 120 120" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="114" height="114" stroke="currentColor" stroke-width="0.9"/><rect x="9" y="9" width="102" height="102" stroke="currentColor" stroke-width="0.4"/><text x="60" y="76" font-family="'Hoefler Text',Didot,'Times New Roman',serif" font-size="42" text-anchor="middle" fill="currentColor" letter-spacing="5">WA</text></svg></div>
   <p class="footer-text">Westbury Advisors &nbsp;&middot;&nbsp; New York City</p>
+  <div class="footer-eho">
+    <div class="eho-logo" aria-label="Equal Housing Opportunity">
+      <svg viewBox="0 0 80 90" width="44" height="50" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Equal Housing Opportunity logo">
+        <title>Equal Housing Opportunity</title>
+        <!-- Roof -->
+        <polygon points="40,4 76,38 4,38" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <!-- Chimney -->
+        <rect x="52" y="12" width="8" height="14" stroke="currentColor" stroke-width="2"/>
+        <!-- House body -->
+        <rect x="10" y="38" width="60" height="46" stroke="currentColor" stroke-width="2.5"/>
+        <!-- Equal sign -->
+        <line x1="26" y1="56" x2="54" y2="56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="26" y1="66" x2="54" y2="66" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <p class="eho-text">Equal Housing Opportunity. Westbury Advisors is committed to compliance with all applicable federal, New York State, and New York City fair housing laws. We do not discriminate on the basis of race, color, national origin, religion, sex, familial status, disability, age, sexual orientation, gender identity or expression, lawful source of income, citizenship or immigration status, or any other protected characteristic under applicable law.</p>
+  </div>
 </footer>
