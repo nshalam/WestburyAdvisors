@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Westbury Advisors</title>
 <style>
 /* ── TOKENS ───────────────────────────────────── */
@@ -208,9 +209,50 @@ img{display:block}
   line-height:1.85;
 }
 
+/* ── RESPONSIVE ───────────────────────────────── */
+@media(max-width:720px){
+  /* Photos: taller main, shorter secondaries */
+  .photo-main img{height:clamp(220px,56vw,400px)}
+  .photo-secondary img{height:clamp(130px,28vw,200px)}
+
+  /* Address: pull down min so long addresses don't overflow */
+  .holding-address{font-size:clamp(1.55rem,6.5vw,3rem)}
+
+  /* Contact: stack label above details */
+  .contact-inner{flex-direction:column;gap:1rem}
+  .contact-details{gap:1.5rem}
+
+  /* EHO: stack logo above text */
+  .footer-eho{flex-direction:column;gap:0.875rem}
+  .eho-logo{align-self:center}
+  .eho-text{text-align:center;max-width:52ch}
+}
+
 @media(max-width:560px){
   .holding-meta{text-align:left;flex-basis:100%}
   .holding-head{flex-direction:column;align-items:flex-start}
+
+  /* Photo gallery: collapse secondaries to single column */
+  .holding-gallery{grid-template-columns:1fr}
+  .photo-secondary img{height:clamp(180px,55vw,280px)}
+
+  /* Reduce section padding on small screens */
+  .site-header{padding:3rem var(--gutter) 2.5rem}
+  .preamble{padding:2.5rem var(--gutter)}
+  .contact{padding:2.5rem var(--gutter)}
+  .portfolio-eyebrow{padding:2.5rem 0 1.75rem}
+  .holding{margin-bottom:4rem}
+  .site-footer{padding:2.5rem var(--gutter) 2rem}
+
+  /* Wordmark: tighten tracking so it fits */
+  .wordmark{letter-spacing:0.28em;text-indent:0.28em;font-size:clamp(0.9rem,5vw,1.3rem)}
+
+  /* Contact items: stack vertically */
+  .contact-details{flex-direction:column;gap:0.875rem}
+  .contact-item{font-size:1rem}
+
+  /* Footer text — smaller tracking so it stays one line */
+  .footer-text{letter-spacing:0.08em;text-indent:0.08em;font-size:0.7rem}
 }
 
 /* ── FOOTER ───────────────────────────────────── */
